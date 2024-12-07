@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SNM &mdash; Social Network for Music</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/swiper.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+            <a href="#" class="site-menu-toggle js-menu-toggle text-black">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-3" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <img class="img-fluid w-25" src="/images/logo/logo.png" alt="" onclick="displayPreview()">
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down" id="navbar">
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li class="nav-item"><a onclick="displayHome()">Home</a></li>
+                <li class="has-children">
+                  <a onclick="displaySearch()">Search</a>
+                  <ul class="dropdown">
+                    <li><a onclick="displayPlaylistSearch()">Playlist</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a id="username-link">Hi <span id="username-hello"></span></a>
+                  <ul class="dropdown">
+                    <li><a onclick="displayEditProfile()">Edit Profile</a></li>
+                    <li><a onclick="displayCreatePlaylist()">Create Playlist</a></li>
+                    <li><a onclick="logout(event)">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+              <a href="#" class="site-menu-toggle js-menu-toggle text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list"
+                  viewBox="0 0 16 16" style="z-index: 1000;">
+                  <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="preview" class="content" data-aos="fade-right">
+      <div class="site-section" data-aos="fade">
+        <div class="container-fluid"> 
+          <div class="row justify-content-center">
+            <img class="img-fluid w-25" src="/images/logo/logo.png" alt="" onclick="displayPreview()">
+          </div>
+          <div class="row justify-content-center mb-4">
+            <h4 class="text-center">Welcome to</h4>
+          </div>
+          <div class="row justify-content-center mb-4">
+            <h2 class="site-section-heading text-center">Social Network for Music</h2>
+          </div>
+          <div class="row justify-content-center mb-4">
+            <a class="btn btn-primary py-2 px-4 text-white text-center" href="./">Start now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="playlist-search" class="content" data-aos="fade-left">
+      <div class="site-section">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <div class="row mb-5">
+                <div class="col-12 ">
+                  <h2 class="site-section-heading text-center">Playlist Search</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-10 col-md-6">
+              <form action="#">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search a plalist" aria-label="search"
+                    aria-describedby="basic-addon1" oninput="searchPlaylist()" id="playlist-search-input">
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-10 col-md-8">
+              <div class="d-flex flex-row overflow-orizzontal mt-3" id="playlist-search-genres-container"></div>
+            </div>
+          </div>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-10 col-md-8">
+              <div class="d-flex flex-row overflow-orizzontal mt-3" id="playlist-search-songs-filter-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section">
+        <div class="container-fluid">
+
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Songs Filter</h1>
+          </div>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-10 col-md-6">
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search a song" aria-label="search"
+                    aria-describedby="basic-addon1" oninput="searchSong()" id="playlist-search-song-input">
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="d-flex flex-row overflow-orizzontal mt-3 align-items-center" id="playlist-search-songs-container">
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section" id="playlist-search-results">
+        <div class="container-fluid">
+
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Playlists</h1>
+          </div>
+
+          <div class="d-flex flex-row overflow-orizzontal" id="playlist-search-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="search" class="content" data-aos="fade-up">
+      <!-- Search form -->
+      <div class="site-section">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <div class="row mb-5">
+                <div class="col-12 ">
+                  <h2 class="site-section-heading text-center">Search</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-10 col-md-6">
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search... something" aria-label="search"
+                    aria-describedby="basic-addon1" oninput="search()" id="search-input">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- user search result -->
+      <div class="site-section" id="search-users">
+        <div class="container-fluid">
+
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Users</h1>
+          </div>
+
+          <div class="d-flex flex-row overflow-orizzontal" id="search-users-container">
+          </div>
+        </div>
+      </div>
+
+      <!-- Playlists search result -->
+      <div class="site-section" id="search-playlists">
+        <div class="container-fluid">
+
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Playlists</h1>
+          </div>
+
+          <div class="d-flex flex-row overflow-orizzontal" id="search-playlists-container">
+          </div>
+        </div>
+      </div>
+
+      <!-- Artists result -->
+      <div class="site-section" id="search-artists">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Artists</h1>
+          </div>
+      
+          <div class="d-flex flex-row overflow-orizzontal" id="search-artists-container">
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- Songs result -->
+      <div class="site-section" id="search-songs">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Songs</h1>
+          </div>
+      
+          <div class="d-flex flex-row overflow-orizzontal" id="search-songs-container">
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- Albums result -->
+      <div class="site-section" id="search-albums">
+        <div class="container-fluid" id="search-albums">
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Albums</h1>
+          </div>
+          <div class="d-flex flex-row overflow-orizzontal" id="search-albums-container">
+          </div>
+      
+        </div>
+      </div>
+
+    </div>
+
+    <div id="home" class="content" data-aos="fade-right">
+      <div class="site-section" data-aos="fade">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <div class="row mb-5">
+                <div class="col-12 ">
+                  <h2 class="site-section-heading text-center">Social Network for Music</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+              <button class="btn btn-primary py-2 px-4 text-white m-2" onclick="displayCreatePlaylist()">Create a playlist</button>
+              <button class="btn btn-primary py-2 px-4 text-white m-2" onclick="displayEditProfile()">Edit profile</button>
+              <button class="btn btn-primary py-2 px-4 text-white m-2" onclick="displaySearch()">Search something</button>
+          </div>
+        </div>
+      </div>
+
+    <div class="site-section" id="home-playlists-section">
+      <div class="container-fluid">
+    
+        <div class="row justify-content-center mb-5">
+          <h1 class="text-center">Your Playlists</h1>
+        </div>
+    
+        <div class="d-flex flex-row overflow-orizzontal" id="home-playlists">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div id="login" class="content" data-aos="fade-left">
+      <div class="site-section" data-aos="fade">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="var(--white)" class="bi bi-person-fill"
+                viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+              </svg>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-10 col-md-8 col-lg-4 mb-5">
+              <form onsubmit="refreshToken(event)">        
+                <div class="row form-group">
+                  <div class="col-md-12 mb-3">
+                    <label class="text-white" for="username">Username</label>
+                    <input type="text" id="username-input" class="form-control">
+                  </div>
+                </div>
+                <div class="row form-group mb-5">
+                  <div class="col-md-12">
+                    <label class="text-white" for="password">Password</label>
+                    <input type="password" id="password-input" class="form-control">
+                    <label class="text-white" id="login-error"></label>
+                  </div>
+                </div>
+                <div class="row form-group mb-4">
+                  <div class="col-md-12 text-center">
+                    <input type="submit" value="Login" class="btn btn-primary py-2 px-4 text-white">
+                  </div>
+                </div>
+                <div class="row form-grup">
+                  <p class="text-white" id="login-error">Don't have an account? <a class="strong text-primary" onclick="displaySignUp()">Sign up</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="sign-up" class="content" data-aos="fade-up">
+      <div class="site-section"  data-aos="fade">
+        <div class="container-fluid">
+
+          <div class="row justify-content-center">
+
+            <div class="col-md-7">
+              <div class="row mb-5">
+                <div class="col-12 ">
+                  <h2 class="site-section-heading text-center">Sign-up</h2>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <div class="row justify-content-center">
+            <div class="col-10 col-md-8 col-lg-4 mb-5">
+              <form onsubmit="signUp(event)">
+                <div class="row form-group">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-white" for="sign-up-first-name">First Name</label>
+                    <input type="text" id="sign-up-first-name" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="text-white" for="sign-up-last-name">Last Name</label>
+                    <input type="text" id="sign-up-last-name" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-white" for="sign-up-email">Email</label> 
+                    <input type="email" id="sign-up-email" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-white" for="sign-up-username">Username</label> 
+                    <input type="text" id="sign-up-username" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-white" for="sign-up-password">Password</label> 
+                    <input type="password" id="sign-up-password" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-white" for="sign-up-info">Info</label> 
+                    <textarea name="sign-up-info" id="sign-up-info" cols="30" rows="7" class="form-control mb-3" placeholder="Write your notes or bio here, keep it empty if you don't want to write something..."></textarea>
+                    <p class="text-white" id="sign-up-message-box"></p> 
+                  </div>
+                </div>
+
+                <div class="row form-group mb-4">
+                  <div class="col-md-12 text-center">
+                    <input type="submit" value="Sign-up" class="btn btn-primary py-2 px-4 text-white">
+                  </div>
+                </div>
+                <div class="row form-grup">
+                  <p class="text-white m" id="login-error">Already have an account? <a class="strong text-primary"
+                      onclick="displayLogin()">Log in</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="user" class="content" data-aos="fade-right">
+    
+      <!-- User Info -->
+      <div class="site-section">
+        <div class="container-fluid" id="user-info">
+
+        </div>
+      </div>
+
+      <div class="site-section" id="user-following-section">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Followed Users</h1>
+          </div>
+      
+          <div class="d-flex flex-row overflow-orizzontal" id="user-following">
+          </div>
+        </div>
+      </div>
+      
+      <div class="site-section" id="user-followed-artists-section">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Followed Artistis</h1>
+          </div>
+      
+          <div class="d-flex flex-row overflow-orizzontal" id="user-followed-artists">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Playlists created-->
+      <div class="site-section" id="user-playlists-section">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Playlists</h1>
+          </div>
+      
+          <div class="d-flex flex-row overflow-orizzontal" id="user-playlists">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Following Users -->
+      <div class="site-section" id="user-followed-playlists-section">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center mb-5">
+            <h1 class="text-center">Followed Playlists</h1>
+          </div>
+      
+          <div class="d-flex flex-row overflow-orizzontal" id="user-followed-playlists">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="playlist" class="content" data-aos="fade-left">
+      <div class="site-section">
+        <div class="container-fluid" id="playlist-info">
+        </div>
+      </div>
+    
+      <div class="site-section">
+        <div class="container-fluid">
+          <div class="row" id="playlist-container">   
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="create-playlist" class="content" data-aos="fade-up">
+      <div class="site-section" data-aos="fade">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <div class="row mb-5">
+                <div class="col-12 ">
+                  <h2 class="site-section-heading text-center">Create Playlist</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-8 mb-5">
+              <form onsubmit="createPlaylist(event)"">
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-white" for="create-playlist-title">Title*</label>
+                    <input type="text" id="create-playlist-title" class="form-control" required>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <label class="text-white" for="update-info">Description</label>
+                    <textarea name="update-info" id="create-playlist-description" cols="30" rows="7" class="form-control"
+                      placeholder="Write the description here, keep it empty if you don't want to write anything..."></textarea>
+                    <label class="text-white" id="create-playlist-description"></label>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <input type="submit" value="Create Playlist" class="btn btn-primary py-2 px-4 text-white">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="edit-playlist" class="content" data-aos="fade-right">
+      <div class="site-section" data-aos="fade">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <div class="row mb-5">
+                <div class="col-12 ">
+                  <h2 class="site-section-heading text-center">Edit Playlist</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: none;" id="edit-playlist-playlistId">
+          </div>
+
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-7">
+              <div class="row mb-1">
+                <div class="col-12">
+                  <h1 class="text-center">Update Avatar</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="row justify-content-center">
+            <div class="col-lg-8 mb-5">
+              <div class="row justify-content-center">
+                <div class="col-md-3">
+                  <img src="/uploads/avatars/playlists/0.jpg" alt="Image" class="img-fluid w-100 mb-4" id="edit-playlist-avatar-img">
+                </div>
+              </div>
+              <div class="row form-group justify-content-center">
+                  <input type="submit" value="Remove Avatar" class="btn btn-primary py-2 px-4 text-white" onclick="removePlaylistAvatar(event)">
+              </div>
+              <label class="text-white" id="edit-playlist-remove-avatar-message"></label>
+            </div>
+
+            <div class="col-lg-8 mb-5">
+              <form onsubmit="updatePlaylistAvatar(event)">
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <label class="text-white" for="edit-playlist-avatar-img-input">New Avatar</label>
+                    <input type="file" id="edit-playlist-avatar-img-input" class="form-control" required>
+                    <label class="text-white" for="avatar" id="edit-playlist-update-avatar-message"></label>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <input type="submit" value="Update Avatar" class="btn btn-primary py-2 px-4 text-white">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-7">
+              <div class="row mb-1">
+                <div class="col-12">
+                  <h1 class="text-center">Update Playlist Genres</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-5 d-flex flex-row overflow-orizzontal" id="update-playlist-genres-list">
+            </div>
+          </div>
+
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-7">
+              <div class="row mb-1">
+                <div class="col-12">
+                  <h1 class="text-center">Update Info</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="row justify-content-center">
+            <div class="col-lg-8 mb-5">
+              <form onsubmit="updatePlaylistInfo(event)"">
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-white" for="edit-playlist-title">Title*</label>
+                    <input type="text" id="edit-playlist-title" class="form-control" required>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <label class="text-white" for="edit-playlist-description">Description</label>
+                    <textarea name="update-info" id="edit-playlist-description" cols="30" rows="7" class="form-control"
+                      placeholder="Write your notes or bio here, keep it empty if you don't want to write something..."></textarea>
+                    <label class="text-white" id="edit-playlist-info-message"></label>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <input type="submit" value="Update Playlist" class="btn btn-primary py-2 px-4 text-white">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="row justify-content-center" id="edit-playlist-delete-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="edit-profile" class="content" data-aos="fade-left">
+      <div class="site-section" data-aos="fade">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <div class="row mb-5">
+                <div class="col-12 ">
+                  <h2 class="site-section-heading text-center">Edit profile</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-7">
+              <div class="row mb-1">
+                <div class="col-12">
+                  <h1 class="text-center">Update Avatar</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="row justify-content-center">
+            <div class="col-lg-8 mb-5">
+              <div class="row justify-content-center">
+                <div class="col-md-3">
+                  <img src="/uploads/avatars/users/0.jpg" alt="Image" class="img-fluid w-100 rounded-circle mb-4" id="avatar-img">
+                </div>
+              </div>
+              <div class="row form-group justify-content-center">
+                  <input type="submit" value="Remove Avatar" class="btn btn-primary py-2 px-4 text-white" onclick="removeAvatar(event)">
+              </div>
+              <label class="text-white" id="remove-avatar-message"></label>
+            </div>
+
+            <div class="col-lg-8 mb-5">
+              <form onsubmit="updateAvatar(event)">
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <label class="text-white" for="avatar">New Avatar</label>
+                    <input type="file" id="avatar-img-input" class="form-control" required>
+                    <label class="text-white" for="avatar" id="update-avatar-message"></label>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <input type="submit" value="Update Avatar" class="btn btn-primary py-2 px-4 text-white">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-7">
+              <div class="row mb-1">
+                <div class="col-12">
+                  <h1 class="text-center">Update Password</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="row justify-content-center">
+            <div class="col-lg-8 mb-5">
+              <form onsubmit="updatePassword(event)">
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-white" for="old-password">Old Password</label>
+                    <input type="password" id="old-password" class="form-control" required>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <label class="text-white" for="new-password">New Password</label>
+                    <input type="password" id="new-password" class="form-control" required>
+                    <label class="text-white" id="update-password-message">New Password</label>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <input type="submit" value="Update Password" class="btn btn-primary py-2 px-4 text-white">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-7">
+              <div class="row mb-1">
+                <div class="col-12">
+                  <h1 class="text-center">Update Favourite Genres</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-5 d-flex flex-row overflow-orizzontal" id="update-profile-genres-list">
+            </div>
+          </div>
+
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-7">
+              <div class="row mb-1">
+                <div class="col-12">
+                  <h1 class="text-center">Update Profile Info</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="row justify-content-center">
+            <div class="col-lg-8 mb-5">
+              <form onsubmit="updateProfile(event)"">
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-white" for="update-first-name">First Name*</label>
+                    <input type="text" id="update-first-name" class="form-control" required>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-white" for="update-last-name">Last Name*</label>
+                    <input type="text" id="update-last-name" class="form-control" required>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <label class="text-white" for="update-info">Info</label>
+                    <textarea name="update-info" id="update-info" cols="30" rows="7" class="form-control"
+                      placeholder="Write your notes or bio here, keep it empty if you don't want to write something..."></textarea>
+                    <label class="text-white" id="update-profile-message"></label>
+                  </div>
+                </div>
+                <div class="row form-group justify-content-center">
+                  <div class="col-md-6">
+                    <input type="submit" value="Update Profile" class="btn btn-primary py-2 px-4 text-white">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <button class="btn btn-danger py-2 px-4 text-white" onclick="deleteProfile()">Delete Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="add-to-playlist" class="content" data-aos="fade-up">
+      <div class="site-section" data-aos="fade">
+        <div class="container-fluid">
+      
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <div class="row mb-5">
+                <div class="col-12 ">
+                  <h2 class="site-section-heading text-center" id="add-to-playlist-title">Add to a playlist</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" id="add-to-playlist-playlists">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="footer py-4" id="footer">
+      <div class="container-fluid text-center">
+        <p>
+          Powered by <a href="https://tiadeca.com" target="_blank" >Mattia De Capitani</a>
+        </p>
+      </div>
+    </div> -->
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="scripts/api.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/user.js"></script>
+  <script src="scripts/spa.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/sign-up.js"></script>
+  <script src="scripts/playlist.js"></script>
+
+</body>
+</html>

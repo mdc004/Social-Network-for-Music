@@ -1,0 +1,298 @@
+[
+  {
+    "email": "luke.skywalker@rebellion.org",
+    "username": "luke_skywalker",
+    "password": "Force#2024",
+    "firstName": "Luke",
+    "lastName": "Skywalker",
+    "info": "Jedi Knight and hero of the Rebellion."
+  },
+  {
+    "email": "leia.organa@rebellion.org",
+    "username": "leia_organa",
+    "password": "Alderaan#2024",
+    "firstName": "Leia",
+    "lastName": "Organa",
+    "info": "Princess and leader of the Rebel Alliance."
+  },
+  {
+    "email": "han.solo@rebellion.org",
+    "username": "han_solo",
+    "password": "Smuggler#2024",
+    "firstName": "Han",
+    "lastName": "Solo",
+    "info": "Rebel pilot and smuggler."
+  },
+  {
+    "email": "obiwan.kenobi@jedi.org",
+    "username": "obiwan_kenobi",
+    "password": "JediMaster#2024",
+    "firstName": "Obi-Wan",
+    "lastName": "Kenobi",
+    "info": "Jedi Master and mentor to Luke Skywalker."
+  },
+  {
+    "email": "darth.vader@empire.com",
+    "username": "darth_vader",
+    "password": "SithLord#2024",
+    "firstName": "Darth",
+    "lastName": "Vader",
+    "info": "Dark Lord of the Sith and father of Luke Skywalker."
+  },
+  {
+    "email": "yoda@jedi.org",
+    "username": "yoda",
+    "password": "WiseJedi#2024",
+    "firstName": "Yoda",
+    "lastName": "Jedi",
+    "info": "Legendary Jedi Master and wise mentor."
+  },
+  {
+    "email": "chewbacca@rebellion.org",
+    "username": "chewbacca",
+    "password": "Wookiee#2024",
+    "firstName": "Chewbacca",
+    "lastName": "Monkey",
+    "info": "Wookiee co-pilot and loyal friend."
+  },
+  {
+    "email": "r2d2@droid.org",
+    "username": "r2d2",
+    "password": "Astromech#2024",
+    "firstName": "R2-D2",
+    "lastName": "AI",
+    "info": "Astromech droid and hero of the Rebellion."
+  },
+  {
+    "email": "c3po@droid.org",
+    "username": "c3po",
+    "password": "Protocol#2024",
+    "firstName": "C-3PO",
+    "lastName": "AI",
+    "info": "Protocol droid and translator."
+  },
+  {
+    "email": "padme.amidala@naboo.com",
+    "username": "padme_amidala",
+    "password": "Queen#2024",
+    "firstName": "Padmé",
+    "lastName": "Amidala",
+    "info": "Queen of Naboo and senator."
+  },
+  {
+    "email": "mace.windu@jedi.org",
+    "username": "mace_windu",
+    "password": "JediMaster#2024",
+    "firstName": "Mace",
+    "lastName": "Windu",
+    "info": "Jedi Master known for his purple lightsaber."
+  },
+  {
+    "email": "qui-gon.jinn@jedi.org",
+    "username": "qui_gon_jinn",
+    "password": "JediMaster#2024",
+    "firstName": "Qui-Gon",
+    "lastName": "Jinn",
+    "info": "Jedi Master known for his wisdom."
+  },
+  {
+    "email": "count.dooku@separatists.com",
+    "username": "count_dooku",
+    "password": "SithLord#2024",
+    "firstName": "Count",
+    "lastName": "Dooku",
+    "info": "Former Jedi Master turned Sith Lord."
+  },
+  {
+    "email": "general.grievous@separatists.com",
+    "username": "general_grievous",
+    "password": "CyborgGeneral#2024",
+    "firstName": "General",
+    "lastName": "Grievous",
+    "info": "Cyborg General of the Separatist Army."
+  },
+  {
+    "email": "wedge.antilles@rebellion.org",
+    "username": "wedge_antilles",
+    "password": "Pilot#2024",
+    "firstName": "Wedge",
+    "lastName": "Antilles",
+    "info": "Pilot in the Rebel Alliance."
+  },
+  {
+    "email": "greedo@tatooine.com",
+    "username": "greedo",
+    "password": "Rodian#2024",
+    "firstName": "Greedo",
+    "lastName": "Mars",
+    "info": "Rodian bounty hunter."
+  },
+  {
+    "email": "jar.jar.binks@naboo.com",
+    "username": "jar_jar_binks",
+    "password": "Gungan#2024",
+    "firstName": "Jar Jar",
+    "lastName": "Binks",
+    "info": "Gungan from Naboo."
+  },
+  {
+    "email": "mon.mothma@rebellion.org",
+    "username": "mon_mothma",
+    "password": "RebelLeader#2024",
+    "firstName": "Mon",
+    "lastName": "Mothma",
+    "info": "Senator and leader of the Rebel Alliance."
+  },
+  {
+    "email": "lando.calrissian@cloudcity.com",
+    "username": "lando_calrissian",
+    "password": "CloudCity#2024",
+    "firstName": "Lando",
+    "lastName": "Calrissian",
+    "info": "Owner of Cloud City."
+  },
+  {
+    "email": "bail.organa@alderaan.com",
+    "username": "bail_organa",
+    "password": "Alderaan#2024",
+    "firstName": "Bail",
+    "lastName": "Organa",
+    "info": "Senator from Alderaan and adoptive father of Leia Organa."
+  },
+  {
+    "email": "nute.gunray@separatists.com",
+    "username": "nute_gunray",
+    "password": "Neimoidian#2024",
+    "firstName": "Nute",
+    "lastName": "Gunray",
+    "info": "Viceroy of the Trade Federation."
+  },
+  {
+    "email": "palpatine@empire.com",
+    "username": "palpatine",
+    "password": "SithLord#2024",
+    "firstName": "Sheev",
+    "lastName": "Palpatine",
+    "info": "Dark Lord of the Sith."
+  },
+  {
+    "email": "bossk@bountyhunter.com",
+    "username": "bossk",
+    "password": "Trandoshan#2024",
+    "firstName": "Bossk",
+    "lastName": "Tales",
+    "info": "Trandoshan bounty hunter."
+  },
+  {
+    "email": "wicket.warrick@endor.com",
+    "username": "wicket_warrick",
+    "password": "Ewok#2024",
+    "firstName": "Wicket",
+    "lastName": "Warrick",
+    "info": "Ewok from Endor."
+  },
+  {
+    "email": "dengar@bountyhunter.com",
+    "username": "dengar",
+    "password": "BountyHunter#2024",
+    "firstName": "Dengar",
+    "lastName": "Bounty",
+    "info": "Bounty hunter and rival of Boba Fett."
+  },
+  {
+    "email": "jaxxon@rebel.org",
+    "username": "jaxxon",
+    "password": "Harebrained#2024",
+    "firstName": "Jaxxon",
+    "lastName": "Rebel",
+    "info": "Rebel hero and humanoid rabbit."
+  },
+  {
+    "email": "sabe@naboo.com",
+    "username": "sabe",
+    "password": "Decoy#2024",
+    "firstName": "Sabé",
+    "lastName": "Queen",
+    "info": "Handmaiden and decoy for Queen Amidala."
+  },
+  {
+    "email": "kit.fisto@jedi.org",
+    "username": "kit_fisto",
+    "password": "JediKnight#2024",
+    "firstName": "Kit",
+    "lastName": "Fisto",
+    "info": "Jedi Master with a unique fighting style."
+  },
+  {
+    "email": "admiral.ackbar@rebellion.org",
+    "username": "admiral_ackbar",
+    "password": "ItsATrap#2024",
+    "firstName": "Admiral",
+    "lastName": "Ackbar",
+    "info": "Rebel Alliance fleet admiral."
+  },
+  {
+    "email": "aurra.singh@bountyhunter.com",
+    "username": "aurra_singh",
+    "password": "BountyHunter#2024",
+    "firstName": "Aurra",
+    "lastName": "Singh",
+    "info": "Bounty hunter with a reputation."
+  },
+  {
+    "email": "zam.wesell@bountyhunter.com",
+    "username": "zam_wesell",
+    "password": "BountyHunter#2024",
+    "firstName": "Zam",
+    "lastName": "Wesell",
+    "info": "Bounty hunter and assassin."
+  },
+  {
+    "email": "poggle.the.lesser@geonosian.com",
+    "username": "poggle_the_lesser",
+    "password": "Geonosian#2024",
+    "firstName": "Poggle",
+    "lastName": "The Lesser",
+    "info": "Geonosian leader and Separatist."
+  },
+  {
+    "email": "sebulba@podracer.com",
+    "username": "sebula",
+    "password": "Podracer#2024",
+    "firstName": "Sebulba",
+    "lastName": "MacLeod",
+    "info": "Podracer and champion."
+  },
+  {
+    "email": "salacious.bcrumbs@jabba.com",
+    "username": "salacious_bcrumbs",
+    "password": "Hutt#2024",
+    "firstName": "Salacious",
+    "lastName": "B. Crumb",
+    "info": "Jabba the Hutt's jester."
+  },
+  {
+    "email": "jabba.the.hutt@hutt.com",
+    "username": "jabba_the_hutt",
+    "password": "Hutt#2024",
+    "firstName": "Jabba",
+    "lastName": "The Hutt",
+    "info": "Hutt crime lord."
+  },
+  {
+    "email": "maz.kanata@cantina.com",
+    "username": "maz_kanata",
+    "password": "Cantina#2024",
+    "firstName": "Maz",
+    "lastName": "Kanata",
+    "info": "Owner of the Maz's Castle cantina."
+  },
+  {
+    "email": "rebels@rebellion.org",
+    "username": "rebels",
+    "password": "Resistance#2024",
+    "firstName": "Rebel",
+    "lastName": "Alliance",
+    "info": "Various rebels fighting against the Empire."
+  }
+]
